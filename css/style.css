@@ -2176,3 +2176,30 @@ ul {
 section:target {
     scroll-margin-top: 80px;
 }
+
+/* ========== CATALOGUE HEADINGS ========== */
+.catalogue-heading {
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+
+.catalogue-heading:first-of-type {
+    margin-top: 0;
+}
+
+.catalogue-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--gold);
+}
+
+.catalogue-title i {
+    color: var(--gold);
+    font-size: 1.2rem;
+}
