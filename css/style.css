@@ -2237,7 +2237,8 @@ section:target {
     scroll-margin-top: 80px;
 }
 
-#marbleGrid, #graniteGrid, #onyxGrid, #importedGrid {
+#marbleGrid, #graniteGrid, #onyxGrid, #importedGrid,
+#marbleSection, #graniteSection, #onyxSection, #importedSection {
     scroll-margin-top: 100px;
 }
 
