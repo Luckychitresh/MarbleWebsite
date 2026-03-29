@@ -173,19 +173,24 @@ document.addEventListener('DOMContentLoaded', function () {
     // ========== PRODUCT FILTER (removed - using catalogue sections) ==========
 
     // ========== CATALOGUE TOGGLE ==========
+    const gridLabels = {
+        'marbleGrid': 'Marble',
+        'graniteGrid': 'Granite',
+        'onyxGrid': 'Onyx',
+        'importedGrid': 'Imported'
+    };
+
     document.querySelectorAll('.catalogue-toggle-btn').forEach(btn => {
-        const originalText = btn.innerHTML;
         btn.addEventListener('click', function () {
             const targetId = this.getAttribute('data-target');
             const grid = document.getElementById(targetId);
             const isExpanded = grid.classList.toggle('expanded');
             this.classList.toggle('expanded');
+            const label = gridLabels[targetId] || 'Full';
 
             if (isExpanded) {
-                const label = targetId === 'marbleGrid' ? 'Marble' : 'Granite';
                 this.innerHTML = 'Show Less ' + label + ' Collection <i class="fas fa-chevron-up"></i>';
             } else {
-                const label = targetId === 'marbleGrid' ? 'Marble' : 'Granite';
                 this.innerHTML = 'View Full ' + label + ' Collection <i class="fas fa-chevron-down"></i>';
             }
         });

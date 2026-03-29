@@ -1752,7 +1752,7 @@ ul {
 /* ========== BACK TO TOP ========== */
 .back-to-top {
     position: fixed;
-    bottom: 30px;
+    bottom: 100px;
     left: 30px;
     width: 45px;
     height: 45px;
@@ -2235,6 +2235,10 @@ ul {
 /* ========== SMOOTH SCROLL LINK HIGHLIGHT ========== */
 section:target {
     scroll-margin-top: 80px;
+}
+
+#marbleGrid, #graniteGrid, #onyxGrid, #importedGrid {
+    scroll-margin-top: 100px;
 }
 
 /* ========== CATALOGUE HEADINGS ========== */
