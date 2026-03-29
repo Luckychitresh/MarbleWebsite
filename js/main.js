@@ -1,5 +1,5 @@
 /* ============================================
-   RAJSHREE MARBLES — Main JavaScript
+   VERSATILE STONEX — Main JavaScript
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
