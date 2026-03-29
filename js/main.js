@@ -440,5 +440,20 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    console.log('%c⬥ RajShree Marbles — Premium Marble Supplier & Exporter', 'color: #c8a97e; font-size: 14px; font-weight: bold; padding: 10px;');
+    // ========== SMOOTH SCROLL FOR ALL ANCHOR LINKS ==========
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            const target = document.querySelector(targetId);
+            if (target) {
+                e.preventDefault();
+                const navHeight = document.getElementById('navbar').offsetHeight;
+                const targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+                window.scrollTo({ top: targetPos, behavior: 'smooth' });
+            }
+        });
+    });
+
+    console.log('%c\u2b25 Versatile Stonex \u2014 Premium Marble Supplier & Exporter', 'color: #c8a97e; font-size: 14px; font-weight: bold; padding: 10px;');
 });
