@@ -174,21 +174,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // ========== CATALOGUE TOGGLE ==========
     document.querySelectorAll('.catalogue-toggle-btn').forEach(btn => {
+        const originalText = btn.innerHTML;
         btn.addEventListener('click', function () {
             const targetId = this.getAttribute('data-target');
             const grid = document.getElementById(targetId);
-            const isExpanded = grid.classList.contains('expanded');
-
-            grid.classList.toggle('expanded');
+            const isExpanded = grid.classList.toggle('expanded');
             this.classList.toggle('expanded');
 
             if (isExpanded) {
-                this.innerHTML = this.innerHTML.replace('Show Less', 'View Full').replace('View Full', 'View Full');
-                const icon = this.querySelector('i');
-                icon.className = 'fas fa-chevron-down';
+                const label = targetId === 'marbleGrid' ? 'Marble' : 'Granite';
+                this.innerHTML = 'Show Less ' + label + ' Collection <i class="fas fa-chevron-up"></i>';
             } else {
-                const text = this.textContent.trim();
-                this.innerHTML = text.replace('View Full', 'Show Less') + ' <i class="fas fa-chevron-up"></i>';
+                const label = targetId === 'marbleGrid' ? 'Marble' : 'Granite';
+                this.innerHTML = 'View Full ' + label + ' Collection <i class="fas fa-chevron-down"></i>';
             }
         });
     });

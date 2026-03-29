@@ -2205,12 +2205,12 @@ section:target {
 }
 
 /* ========== CATALOGUE TOGGLE ========== */
-.catalogue-hidden {
-    display: none;
+.product-card.catalogue-hidden {
+    display: none !important;
 }
 
-.product-grid.expanded .catalogue-hidden {
-    display: block;
+.product-grid.expanded .product-card.catalogue-hidden {
+    display: block !important;
     animation: fadeInUp 0.5s ease forwards;
 }
 
