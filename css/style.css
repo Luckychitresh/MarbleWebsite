@@ -2203,3 +2203,31 @@ section:target {
     color: var(--gold);
     font-size: 1.2rem;
 }
+
+/* ========== CATALOGUE TOGGLE ========== */
+.catalogue-hidden {
+    display: none;
+}
+
+.product-grid.expanded .catalogue-hidden {
+    display: block;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.catalogue-toggle {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.catalogue-toggle-btn {
+    gap: 8px;
+}
+
+.catalogue-toggle-btn i {
+    transition: transform 0.3s ease;
+}
+
+.catalogue-toggle-btn.expanded i {
+    transform: rotate(180deg);
+}

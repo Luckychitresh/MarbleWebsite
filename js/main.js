@@ -170,28 +170,26 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', animateCounters);
     animateCounters(); // Check on load
 
-    // ========== PRODUCT FILTER ==========
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const productCards = document.querySelectorAll('.product-card');
+    // ========== PRODUCT FILTER (removed - using catalogue sections) ==========
 
-    filterBtns.forEach(btn => {
+    // ========== CATALOGUE TOGGLE ==========
+    document.querySelectorAll('.catalogue-toggle-btn').forEach(btn => {
         btn.addEventListener('click', function () {
-            // Update active button
-            filterBtns.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
+            const targetId = this.getAttribute('data-target');
+            const grid = document.getElementById(targetId);
+            const isExpanded = grid.classList.contains('expanded');
 
-            const filter = this.getAttribute('data-filter');
+            grid.classList.toggle('expanded');
+            this.classList.toggle('expanded');
 
-            productCards.forEach((card, index) => {
-                const category = card.getAttribute('data-category');
-
-                if (filter === 'all' || category === filter) {
-                    card.classList.remove('hidden');
-                    card.style.animation = `fadeInUp 0.5s ease ${index * 0.08}s forwards`;
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
+            if (isExpanded) {
+                this.innerHTML = this.innerHTML.replace('Show Less', 'View Full').replace('View Full', 'View Full');
+                const icon = this.querySelector('i');
+                icon.className = 'fas fa-chevron-down';
+            } else {
+                const text = this.textContent.trim();
+                this.innerHTML = text.replace('View Full', 'Show Less') + ' <i class="fas fa-chevron-up"></i>';
+            }
         });
     });
 
